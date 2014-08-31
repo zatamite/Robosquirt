@@ -1,16 +1,16 @@
 //  Squirt Gun Robot 2014 *PeterFarell*
 // works with simple key fob 4 button transmitter. connected to pins A0-A3 
-// A4 is reserved for the sharp Ir sensor for object detection.
-
-
+// A4 is reserved for the sharp Ir sensor for object detection
 #include <Wire.h>
 #include <Adafruit_MotorShield.h>
 #include "utility/Adafruit_PWMServoDriver.h"
 #include <Servo.h>
+
 int pos = 0;  // left over variable for testing
 int ms = 255; // motor speed going straight
 int ts = 150; // motor turn speed
 int ang = 70; // servo +- angle max 90
+
 // Create the motor shield object with the default I2C address
 Adafruit_MotorShield AFMS = Adafruit_MotorShield(); 
 Adafruit_DCMotor *myMotor = AFMS.getMotor(1);  
@@ -23,6 +23,7 @@ Servo servot;
 // 45: the difference between two consecutive measurements to be taken as valid
 // model: an int that determines your sensor:  1080 for GP2Y0A21Y
 //                                            20150 for GP2Y0A02Y
+
 int maindelay = 100;  // set for regual use
 int backupdelay = 1000; // back up for one second when avoiding wall
 int mainturndelay = 80;  // set for when buton is held down
@@ -94,8 +95,8 @@ void goSquirt(int sq)
 
 
 void setup() {
-  Serial.begin(9600);           // set up Serial library at 9600 bps
-  Serial.println("Adafruit Motorshield v2 - DC Motor test!");
+ // Serial.begin(9600);           // set up Serial library at 9600 bps
+ // Serial.println("Adafruit Motorshield v2 - DC Motor test!");
   AFMS.begin();  // create with the default frequency 1.6KHz
   //AFMS.begin(1000);  // OR with a different frequency, say 1KHz
 
@@ -134,10 +135,10 @@ void loop() {
   
   //Serial.print(fltSensorCalc); //Send distance to computer
   //Serial.println(" cm"); //Add cm to result
-  Serial.println(sensorValue);
-  Serial.println(sensorValue2);
-  Serial.println(sensorValue3);
-  Serial.println(sensorValue4);
+  //Serial.println(sensorValue);
+  //Serial.println(sensorValue2);
+  //Serial.println(sensorValue3);
+  //Serial.println(sensorValue4);
 
   
  
